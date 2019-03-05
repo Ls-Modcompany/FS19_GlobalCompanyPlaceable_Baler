@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_GC_shopItem_balerWithStack</name>
+        <functions>
+            <function>$l10n_GC_function_balerWithStack</function>
+        </functions>
+        <specs>
+            <capacity>20000</capacity>
+            <fillTypes>straw dryGrass_windrow grass_windrow</fillTypes>
+        </specs>
+        <image>store_balerWithStack.dds</image>
+        <price>110000</price>
+        <lifetime>1000</lifetime>
+        <dailyUpkeep>45</dailyUpkeep>
+        <rotation>0</rotation>
+        <brand>GCPLACEABLE</brand>
+        <species>placeable</species>
+        <category>silos</category>
+        <vertexBufferMemoryUsage>180404</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>32964</indexBufferMemoryUsage>
+        <textureMemoryUsage>5680200</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <placeableType>GC_BalerPlaceable</placeableType>
+    <filename>balerWithStack.i3d</filename>
+    <placement testSizeX="5" testSizeZ="5.5" sizeX="7" sizeZ="7.5" useRandomYRotation="false" useManualYRotation="true" />
+
+	<leveling requireLeveling="true" maxSmoothDistance="5" maxSlope="30" maxEdgeAngle="20" >
+        <levelAreas>
+            <levelArea startNode="3" widthNode="3|0" heightNode="3|1" groundType="asphalt"/>
+        </levelAreas>
+    </leveling>
+	
+	<globalCompany>
+        <balers>
+            <baler indexName="balerWithStack" > 
+                <mainPart capacity="20000">  
+                    <fillTypes>
+                        <fillType name="straw" baleTypeName="STRAW_120_90_240" />
+                        <fillType name="dryGrass_windrow" baleTypeName="DRYGRASS_WINDROW_120_90_240" />
+                        <fillType name="grass_windrow" baleTypeName="GRASS_WINDROW_120_90_240" />
+                    </fillTypes>
+
+                    <unloadTrigger exactFillRootNode="unloadingTrigger" />
+                    <cleanHeap startNode="CleaningHeap" widthNode="CleaningHeapWidth" heightNode="CleaningHeapHeight" useRandomDrop="true" />
+                    
+                    <movers>
+                        <mover node="plane_grass" fillType="grass_windrow">
+                            <translation minimum="0.011 -1.11899996 -5.59597301" maximum="0.011 0.537 -5.59597301" />
+                        </mover>
+                        <mover node="plane_hay" fillType="dryGrass_windrow">
+                            <translation minimum="0.011 -1.119 -5.59597301" maximum="0.011 0.537 -5.59597301" />
+                        </mover>
+                        <mover node="plane_straw" fillType="straw">
+                            <translation minimum="0.011 -1.119 -5.59597301" maximum="0.011 0.537 -5.59597301" />
+                        </mover>
+                    </movers>
+
+                    <conveyor>
+                        <shader node="conveyor" scrollLength="8.1" scrollSpeed="0.13" direction="Y" />
+                        <effect>
+                            <shader node="conveyorEffect" scrollLength="3.5" scrollSpeed="0.6" />
+                        </effect>
+                    </conveyor>
+
+                    <baleAnimation>
+                        <animation duration="6">
+                            <part index="baleAnimation">
+                                <keyFrame time="0" translation="0 1.05655873 0.15" />
+                                <keyFrame time="1" translation="0 1.05655873 7.953" />
+                            </part>
+                        </animation>
+                        <objects node="baleAnimation">
+                            <object node="baleStraw240_vis" fillTypeName="straw" />
+                            <object node="baleGrass240_vis" fillTypeName="grass_windrow" />
+                            <object node="baleHay240_vis" fillTypeName="dryGrass_windrow" />
+                        </objects>
+                    </baleAnimation>
+
+                    <playerTrigger playerTriggerNode="playerTriggerMain" />
+                    <playerTriggerClean playerTriggerNode="playerTriggerCleaning" />
+                </mainPart> 
+
+                <stack forkNode="movingX"> 
+                    <baleTrigger node="baleTrigger" />
+
+                    <doStackAnimationStart duration="4">
+                        <part index="movingY">
+                            <keyFrame time="0" translation="0 0 0" />
+                            <keyFrame time="0.3" translation="0 0.1 0" />
+                            <keyFrame time="0.6" translation="0 0.1 0" />
+                            <keyFrame time="1" translation="0 1 0" />
+                        </part>
+                        <part index="movingX">
+                            <keyFrame time="0" translation="1 0 0" />
+                            <keyFrame time="0.3" translation="1 0 0" />
+                            <keyFrame time="0.6" translation="-0.029 0 0" />
+                        </part>
+                    </doStackAnimationStart>
+                    <doStackAnimationEnd duration="4">
+                        <part index="movingY">
+                            <keyFrame time="0" translation="0 1 0" />
+                            <keyFrame time="0.3" translation="0 0.787 0" />
+                            <keyFrame time="0.6" translation="0 0.787 0" />
+                            <keyFrame time="1" translation="0 0 0" />
+                        </part>
+                        <part index="movingX">
+                            <keyFrame time="0" translation="-0.029 0 0" />
+                            <keyFrame time="0.3" translation="-0.029 0 0" />
+                            <keyFrame time="0.6" translation="1 0 0" />
+                        </part>
+                    </doStackAnimationEnd>
+
+
+                </stack> 
+                
+                
+                <i3dMappings>
+                    <i3dMapping id="unloadingTrigger" node="0|2" />
+                    <i3dMapping id="playerTriggerMain" node="0|3" />
+                    <i3dMapping id="playerTriggerCleaning" node="0|4" />
+                    <i3dMapping id="CleaningHeap" node="0|5" />
+                    <i3dMapping id="CleaningHeapWidth" node="0|5|0" />
+                    <i3dMapping id="CleaningHeapHeight" node="0|5|1" />
+                    <i3dMapping id="plane_grass" node="0|6|0" />
+                    <i3dMapping id="plane_hay" node="0|6|1" />
+                    <i3dMapping id="plane_straw" node="0|6|2" />
+                    <i3dMapping id="conveyor" node="0|0" />
+                    <i3dMapping id="conveyorEffect" node="0|7" />
+                    <i3dMapping id="baleAnimation" node="0|8|0" />
+                    <i3dMapping id="baleStraw240_vis" node="0|8|1|0" />
+                    <i3dMapping id="baleGrass240_vis" node="0|8|1|1" />
+                    <i3dMapping id="baleHay240_vis" node="0|8|1|2" />
+                    <i3dMapping id="movingY" node="1|0" />
+                    <i3dMapping id="movingX" node="1|0|0" />
+                    <i3dMapping id="baleTrigger" node="1|2" />
+                </i3dMappings>	
+            </baler>
+        </balers>		
+    </globalCompany>
+
+    
+</placeable>

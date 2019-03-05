@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="42">
+    <author>LsModcompany / kevink98</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en><![CDATA[Stationary balers]]></en>
+        <de><![CDATA[Stationäre Ballenpressen]]></de>
+    </title>
+    <description>
+        <en><![CDATA[Stationäre Ballenpressen]]></en>
+        <de><![CDATA[Stationäre Ballenpressen]]></de>
+    </description>
+    <iconFilename>icon_balers.dds</iconFilename>
+    <multiplayer supported="true" />
+
+    <storeItems>
+        <storeItem xmlFilename="baler.xml" />
+        <storeItem xmlFilename="balerWithStack.xml" />
+    </storeItems>
+	
+    <brands>
+        <brand name="GCPLACEABLE" title="GlobalCompany Placeable" image="brand_placeable.dds"/>
+    </brands>
+</modDesc>
