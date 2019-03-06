@@ -36,7 +36,7 @@
 	
 	<globalCompany>
         <balers>
-            <baler indexName="balerWithStack" > 
+            <baler indexName="balerWithStack" autoOn="true" > 
                 <mainPart capacity="20000">  
                     <fillTypes>
                         <fillType name="straw" baleTypeName="STRAW_120_90_240" />
@@ -103,8 +103,8 @@
                     <doStackAnimationEnd duration="4">
                         <part index="movingY">
                             <keyFrame time="0" translation="0 1 0" />
-                            <keyFrame time="0.3" translation="0 0.787 0" />
-                            <keyFrame time="0.6" translation="0 0.787 0" />
+                            <keyFrame time="0.3" translation="0 0.884 0" />
+                            <keyFrame time="0.6" translation="0 0.884 0" />
                             <keyFrame time="1" translation="0 0 0" />
                         </part>
                         <part index="movingX">
@@ -117,6 +117,16 @@
 
                 </stack> 
                 
+                <baleMover velocityZ="0.8" >
+                    <moveCollision node="moveCollision" />       
+
+                    <moveCollisionAnimation node="moveCollisionAnimation" duration="1">
+                        <part index="moveCollisionAnimation">
+                            <keyFrame time="0" translation="0 1.30256426 -1.50353706" />
+                            <keyFrame time="1" translation="0 1.30256426 -0.691" />
+                        </part>             
+                    </moveCollisionAnimation>
+                </baleMover>
                 
                 <i3dMappings>
                     <i3dMapping id="unloadingTrigger" node="0|2" />
@@ -137,6 +147,8 @@
                     <i3dMapping id="movingY" node="1|0" />
                     <i3dMapping id="movingX" node="1|0|0" />
                     <i3dMapping id="baleTrigger" node="1|2" />
+                    <i3dMapping id="moveCollision" node="2|2" />
+                    <i3dMapping id="moveCollisionAnimation" node="2|4" />
                 </i3dMappings>	
             </baler>
         </balers>		
