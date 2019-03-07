@@ -118,6 +118,7 @@
                 </stack> 
                 
                 <baleMover velocityZ="0.8" >
+                    <baleTriggerMover node="baleTriggerMover" />       
                     <moveCollision node="moveCollision" />       
 
                     <moveCollisionAnimation node="moveCollisionAnimation" duration="1">
@@ -149,6 +150,7 @@
                     <i3dMapping id="baleTrigger" node="1|2" />
                     <i3dMapping id="moveCollision" node="2|2" />
                     <i3dMapping id="moveCollisionAnimation" node="2|4" />
+                    <i3dMapping id="baleTriggerMover" node="2|5" />
                 </i3dMappings>	
             </baler>
         </balers>		
