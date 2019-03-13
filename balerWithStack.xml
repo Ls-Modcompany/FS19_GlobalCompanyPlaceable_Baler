@@ -28,6 +28,10 @@
     <filename>balerWithStack.i3d</filename>
     <placement testSizeX="5" testSizeZ="5.5" sizeX="7" sizeZ="7.5" useRandomYRotation="false" useManualYRotation="true" />
 
+    <clearAreas>
+        <clearArea startNode="3" widthNode="3|0" heightNode="3|1"/>
+    </clearAreas>
+
 	<leveling requireLeveling="true" maxSmoothDistance="5" maxSlope="30" maxEdgeAngle="20" >
         <levelAreas>
             <levelArea startNode="3" widthNode="3|0" heightNode="3|1" groundType="asphalt"/>
@@ -36,12 +40,12 @@
 	
 	<globalCompany>
         <balers>
-            <baler indexName="balerWithStack" autoOn="true" > 
+            <baler indexName="balerWithStack" title="GC_baler_title_witStack" autoOn="true" > 
                 <mainPart capacity="20000">  
                     <fillTypes>
                         <fillType name="straw" baleTypeName="STRAW_120_90_240" />
-                        <fillType name="dryGrass_windrow" baleTypeName="DRYGRASS_WINDROW_120_90_240" />
                         <fillType name="grass_windrow" baleTypeName="GRASS_WINDROW_120_90_240" />
+                        <fillType name="dryGrass_windrow" baleTypeName="DRYGRASS_WINDROW_120_90_240" />
                     </fillTypes>
 
                     <unloadTrigger exactFillRootNode="unloadingTrigger" />
@@ -82,10 +86,16 @@
 
                     <playerTrigger playerTriggerNode="playerTriggerMain" />
                     <playerTriggerClean playerTriggerNode="playerTriggerCleaning" />
+
+                    <sounds>
+                        <sound delayedStart="false">
+                            <sample linkNode="soundMain" template="BALE_WRAPPING_02"  />
+                        </sound>
+                    </sounds>                    
                 </mainPart> 
 
                 <stack forkNode="movingX"> 
-                    <baleTrigger node="baleTrigger" />
+                    <baleTrigger baletriggerNode="baleTrigger" />
 
                     <doStackAnimationStart duration="4">
                         <part index="movingY">
@@ -114,11 +124,19 @@
                         </part>
                     </doStackAnimationEnd>
 
+                    <conveyor>
+                        <shader node="conveyorBelt1" scrollLength="2.45" scrollSpeed="0.08" direction="Y" />
+                    </conveyor>
 
+                    <sounds>
+                        <sound delayedStart="false">
+                            <sample linkNode="soundStacker" template="DEFAULT_HYDRAULIC_SOUND" />
+                        </sound>
+                    </sounds>
                 </stack> 
                 
                 <baleMover velocityZ="0.8" >
-                    <baleTriggerMover node="baleTriggerMover" />       
+                    <baleTriggerMover baletriggerNode="baleTriggerMover" />       
                     <moveCollision node="moveCollision" />       
 
                     <moveCollisionAnimation node="moveCollisionAnimation" duration="1">
@@ -127,6 +145,16 @@
                             <keyFrame time="1" translation="0 1.30256426 -0.691" />
                         </part>             
                     </moveCollisionAnimation>
+                    
+                    <conveyor>
+                        <shader node="conveyorBelt2" scrollLength="7.83" scrollSpeed="0.08" direction="Y" />
+                    </conveyor>
+
+                    <sounds>
+                        <sound delayedStart="false">
+                            <sample linkNode="soundMover" template="DEFOLIATOR_01"  />
+                        </sound>
+                    </sounds>
                 </baleMover>
                 
                 <i3dMappings>
@@ -151,10 +179,13 @@
                     <i3dMapping id="moveCollision" node="2|2" />
                     <i3dMapping id="moveCollisionAnimation" node="2|4" />
                     <i3dMapping id="baleTriggerMover" node="2|5" />
+                    <i3dMapping id="soundMain" node="0|9" />
+                    <i3dMapping id="soundStacker" node="1|0|1" />
+                    <i3dMapping id="soundMover" node="2|6" />
+                    <i3dMapping id="conveyorBelt1" node="1|1" />
+                    <i3dMapping id="conveyorBelt2" node="2|0" />
                 </i3dMappings>	
             </baler>
         </balers>		
-    </globalCompany>
-
-    
+    </globalCompany>   
 </placeable>
