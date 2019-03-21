@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<shopManager>
-	<changeCategory>
-		<item xmlFilename="baler.xml" category="globalCompanyPlaceable" />
-		<item xmlFilename="balerWithStack.xml" category="globalCompanyPlaceable" />
-	</changeCategory>		
-</shopManager>
