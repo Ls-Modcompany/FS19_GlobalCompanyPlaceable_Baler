@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <placeable>
     <storeData>
-        <name>$l10n_GC_shopItem_balerWithStack</name>
+        <name>$l10n_GlobalCompanyPlaceable_Baler_shopItem_balerWithStack</name>
         <functions>
-            <function>$l10n_GC_function_balerWithStack</function>
+            <function>$l10n_GlobalCompanyPlaceable_Baler_function_balerWithStack</function>
         </functions>
         <specs>
             <capacity>20000</capacity>

@@ -1,12 +1,10 @@
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<l10n><elements>
-
-
-<e k="GC_shopItem_baler" v="Ballenpresse"/>
-<e k="GC_function_baler" v="Mit einer Ballenpresse kann aus losem Material Ballen erstellt werden."/>
-<e k="GC_shopItem_balerWithStack" v="Ballenpresse mit Stapler"/>
-<e k="GC_function_balerWithStack" v="Mit einer Ballenpresse kann aus losem Material Ballen erstellt werden. Besonderheit an dieser Anlage ist, dass die Ballen automatisch gestapelt werden."/>
-
-
-</elements></l10n>
+<l10n>
+	<elements>
+		<e k="GlobalCompanyPlaceable_Baler_shopItem_baler" v="Ballenpresse"/>
+		<e k="GlobalCompanyPlaceable_Baler_function_baler" v="Mit einer Ballenpresse kann aus losem Material Ballen erstellt werden."/>
+		<e k="GlobalCompanyPlaceable_Baler_shopItem_balerWithStack" v="Ballenpresse mit Stapler"/>
+		<e k="GlobalCompanyPlaceable_Baler_function_balerWithStack" v="Mit einer Ballenpresse kann aus losem Material Ballen erstellt werden. Besonderheit an dieser Anlage ist, dass die Ballen automatisch gestapelt werden."/>
+	</elements>
+</l10n>

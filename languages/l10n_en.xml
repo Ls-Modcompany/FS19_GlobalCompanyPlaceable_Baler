@@ -1,0 +1,10 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+	<elements>
+		<e k="GlobalCompanyPlaceable_Baler_shopItem_baler" v="Baler"/>
+		<e k="GlobalCompanyPlaceable_Baler_function_baler" v="With this machine you can produce bales using loose material."/>
+		<e k="GlobalCompanyPlaceable_Baler_shopItem_balerWithStack" v="Baler with stacker"/>
+		<e k="GlobalCompanyPlaceable_Baler_function_balerWithStack" v="With this machine you can produce bales using loose material. This machine also features a bale stacking feature."/>
+	</elements>
+</l10n>
