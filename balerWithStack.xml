@@ -41,6 +41,24 @@
 	<globalCompany>
         <balers>
             <baler indexName="balerWithStack" title="GC_baler_title_witStack" autoOn="true" > 
+                
+
+                <registerAnimations>                    
+                    <animation name="baleAnimation">
+                        <part node="baleAnimation" startTime="0" endTime="6" startTrans="0 1.05655873 0.15" endTrans="0 1.05655873 7.953" />                        
+                    </animation>
+                    <animation name="stackAnimation">
+                        <part node="movingX" startTime="0" endTime="1" startTrans="1 0 0" endTrans="-0.029 0 0" />
+                        <part node="movingY" startTime="1" endTime="2" startTrans="0 0.1 0" endTrans="0 1 0" />           
+                        <part node="movingY" startTime="2" endTime="2.6" startTrans="0 1 0" endTrans="0 0.884 0" />
+                        <part node="movingX" startTime="2.6" endTime="3.6" startTrans="-0.029 0 0" endTrans="1 0 0" />
+                        <part node="movingY" startTime="3.6" endTime="4.6" startTrans="0 0.884 0" endTrans="0 0.1 0" />                        
+                    </animation>
+                    <animation name="moveCollisionAnimation">
+                        <part node="moveCollisionAnimation" startTime="0" endTime="1" startTrans="0 1.30256426 -1.50353706" endTrans="0 1.30256426 -0.691" />                        
+                    </animation>
+                </registerAnimations>
+
                 <mainPart capacity="20000">  
                     <fillTypes>
                         <fillType name="straw" baleTypeName="STRAW_120_90_240" />
@@ -71,12 +89,6 @@
                     </conveyor>
 
                     <baleAnimation>
-                        <animation duration="6">
-                            <part index="baleAnimation">
-                                <keyFrame time="0" translation="0 1.05655873 0.15" />
-                                <keyFrame time="1" translation="0 1.05655873 7.953" />
-                            </part>
-                        </animation>
                         <objects node="baleAnimation">
                             <object node="baleStraw240_vis" fillTypeName="straw" />
                             <object node="baleGrass240_vis" fillTypeName="grass_windrow" />
@@ -97,32 +109,6 @@
                 <stack forkNode="movingX"> 
                     <baleTrigger baletriggerNode="baleTrigger" />
 
-                    <doStackAnimationStart duration="4">
-                        <part index="movingY">
-                            <keyFrame time="0" translation="0 0 0" />
-                            <keyFrame time="0.3" translation="0 0.1 0" />
-                            <keyFrame time="0.6" translation="0 0.1 0" />
-                            <keyFrame time="1" translation="0 1 0" />
-                        </part>
-                        <part index="movingX">
-                            <keyFrame time="0" translation="1 0 0" />
-                            <keyFrame time="0.3" translation="1 0 0" />
-                            <keyFrame time="0.6" translation="-0.029 0 0" />
-                        </part>
-                    </doStackAnimationStart>
-                    <doStackAnimationEnd duration="4">
-                        <part index="movingY">
-                            <keyFrame time="0" translation="0 1 0" />
-                            <keyFrame time="0.3" translation="0 0.884 0" />
-                            <keyFrame time="0.6" translation="0 0.884 0" />
-                            <keyFrame time="1" translation="0 0 0" />
-                        </part>
-                        <part index="movingX">
-                            <keyFrame time="0" translation="-0.029 0 0" />
-                            <keyFrame time="0.3" translation="-0.029 0 0" />
-                            <keyFrame time="0.6" translation="1 0 0" />
-                        </part>
-                    </doStackAnimationEnd>
 
                     <conveyor>
                         <shader node="conveyorBelt1" scrollLength="2.45" scrollSpeed="0.08" direction="Y" />
@@ -138,13 +124,8 @@
                 <baleMover velocityZ="0.8" >
                     <baleTriggerMover baletriggerNode="baleTriggerMover" />       
                     <moveCollision node="moveCollision" />       
+                    <moveCollisionAnimation node="moveCollisionAnimation" />       
 
-                    <moveCollisionAnimation node="moveCollisionAnimation" duration="1">
-                        <part index="moveCollisionAnimation">
-                            <keyFrame time="0" translation="0 1.30256426 -1.50353706" />
-                            <keyFrame time="1" translation="0 1.30256426 -0.691" />
-                        </part>             
-                    </moveCollisionAnimation>
                     
                     <conveyor>
                         <shader node="conveyorBelt2" scrollLength="7.83" scrollSpeed="0.08" direction="Y" />
