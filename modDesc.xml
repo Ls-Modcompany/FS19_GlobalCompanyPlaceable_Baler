@@ -6,11 +6,13 @@
         <en><![CDATA[Stationary balers]]></en>
         <de><![CDATA[Stationäre Ballenpressen]]></de>
     </title>
-    <description>
+    
+	<description>
         <en><![CDATA[Stationäre Ballenpressen]]></en>
         <de><![CDATA[Stationäre Ballenpressen]]></de>
     </description>
-    <iconFilename>icon_balers.dds</iconFilename>
+    
+	<iconFilename>icon_balers.dds</iconFilename>
     <multiplayer supported="true" />
 
     <storeItems>
@@ -21,4 +23,10 @@
     <brands>
         <brand name="GCPLACEABLE" title="GlobalCompany Placeable" image="brand_placeable.dds"/>
     </brands>
+	
+	<extraSourceFiles>
+		<sourceFile filename="scripts/GC_Checker.lua" />
+    </extraSourceFiles>
+	
+	<globalCompany minimumVersion="1.0.0.0" />
 </modDesc>
