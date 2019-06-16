@@ -36,13 +36,105 @@
 	
     <globalCompany>
         <balers>
-            <baler indexName="" >          
-            
+            <baler indexName="BALER" title="GC_baler_title" autoOn="true" >      
+                <registerAnimations>                    
+                    <animation name="baleAnimation">
+                        <part node="baleAnimation" startTime="0" endTime="6" startTrans="0 1.05655873 0.15" endTrans="0 1.05655873 7.953" />                        
+                    </animation>
+                    <animation name="moveCollisionAnimation">
+                        <part node="moveCollisionAnimation" startTime="0" endTime="1" startTrans="0 1.303 1.13" endTrans="0 1.30256426 2" />                        
+                    </animation>
+                </registerAnimations>
 
-                <playerTrigger playerTriggerNode="playerTrigger" />
+                <mainPart capacity="20000">  
+                    <fillTypes>
+                        <fillType name="straw" baleTypeName="STRAW_120_90_240" />
+                        <fillType name="grass_windrow" baleTypeName="GRASS_WINDROW_120_90_240" />
+                        <fillType name="dryGrass_windrow" baleTypeName="DRYGRASS_WINDROW_120_90_240" />
+                    </fillTypes>
+
+                    <unloadTrigger exactFillRootNode="unloadingTrigger" />
+                    <cleanHeap startNode="CleaningHeap" widthNode="CleaningHeapWidth" heightNode="CleaningHeapHeight" useRandomDrop="true" />
+                    
+                    <movers>
+                        <mover node="plane_grass" fillType="grass_windrow">
+                            <translation minimum="0.011 -1.11899996 -5.59597301" maximum="0.011 0.537 -5.59597301" />
+                        </mover>
+                        <mover node="plane_hay" fillType="dryGrass_windrow">
+                            <translation minimum="0.011 -1.119 -5.59597301" maximum="0.011 0.537 -5.59597301" />
+                        </mover>
+                        <mover node="plane_straw" fillType="straw">
+                            <translation minimum="0.011 -1.119 -5.59597301" maximum="0.011 0.537 -5.59597301" />
+                        </mover>
+                    </movers>
+
+                    <conveyor>
+                        <shader node="conveyor" scrollLength="8.1" scrollSpeed="0.13" direction="Y" />
+                        <effect>
+                            <shader node="conveyorEffect" scrollLength="3.5" scrollSpeed="0.6" />
+                        </effect>
+                    </conveyor>
+
+                    <baleAnimation>
+                        <objects node="baleAnimation">
+                            <object node="baleStraw240_vis" fillTypeName="straw" />
+                            <object node="baleGrass240_vis" fillTypeName="grass_windrow" />
+                            <object node="baleHay240_vis" fillTypeName="dryGrass_windrow" />
+                        </objects>
+                    </baleAnimation>
+
+                    <playerTrigger playerTriggerNode="playerTriggerMain" />
+                    <playerTriggerClean playerTriggerNode="playerTriggerCleaning" />
+
+                    <sounds>
+                        <sound delayedStart="false">
+                            <sample linkNode="soundMain" template="BALE_WRAPPING_02"  />
+                        </sound>
+                    </sounds>   
+
+                    <baleTrigger baletriggerNode="baleTrigger" />          
+                </mainPart> 
+                
+                <baleMover velocityZ="0.8" >
+                    <baleTriggerMover baletriggerNode="baleTriggerMover" />       
+                    <moveCollision node="moveCollision" />       
+                    <moveCollisionAnimation node="moveCollisionAnimation" />       
+                    
+                    <conveyor>
+                        <shader node="conveyorBelt2" scrollLength="7.83" scrollSpeed="0.08" direction="Y" />
+                    </conveyor>
+
+                    <sounds>
+                        <sound delayedStart="false">
+                            <sample linkNode="soundMover" template="DEFOLIATOR_01"  />
+                        </sound>
+                    </sounds>
+                </baleMover>
                 
                 <i3dMappings>
-                
+                    <i3dMapping id="unloadingTrigger" node="0|2" />
+                    <i3dMapping id="playerTriggerMain" node="0|3" />
+                    <i3dMapping id="playerTriggerCleaning" node="0|4" />
+                    <i3dMapping id="CleaningHeap" node="0|5" />
+                    <i3dMapping id="CleaningHeapWidth" node="0|5|0" />
+                    <i3dMapping id="CleaningHeapHeight" node="0|5|1" />
+                    <i3dMapping id="plane_grass" node="0|6|0" />
+                    <i3dMapping id="plane_hay" node="0|6|1" />
+                    <i3dMapping id="plane_straw" node="0|6|2" />
+                    <i3dMapping id="conveyor" node="0|0" />
+                    <i3dMapping id="conveyorEffect" node="0|7" />
+                    <i3dMapping id="baleAnimation" node="0|8|0" />
+                    <i3dMapping id="baleStraw240_vis" node="0|8|1|0" />
+                    <i3dMapping id="baleGrass240_vis" node="0|8|1|1" />
+                    <i3dMapping id="baleHay240_vis" node="0|8|1|2" />
+                    <i3dMapping id="moveCollision" node="1|2" />
+                    <i3dMapping id="moveCollisionAnimation" node="1|4" />
+                    <i3dMapping id="baleTriggerMover" node="1|5" />
+                    <i3dMapping id="soundMain" node="0|9" />
+                    <i3dMapping id="soundStacker" node="1|0|1" />
+                    <i3dMapping id="soundMover" node="1|6" />
+                    <i3dMapping id="conveyorBelt2" node="1|0" />
+                    <i3dMapping id="baleTrigger" node="0|10" />
                 </i3dMappings>	
             </baler>
         </balers>		

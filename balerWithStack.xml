@@ -40,9 +40,7 @@
 	
 	<globalCompany>
         <balers>
-            <baler indexName="balerWithStack" title="GC_baler_title_witStack" autoOn="true" > 
-                
-
+            <baler indexName="BALERWITHSTACK" title="GC_baler_title_witStack" autoOn="true" >      
                 <registerAnimations>                    
                     <animation name="baleAnimation">
                         <part node="baleAnimation" startTime="0" endTime="6" startTrans="0 1.05655873 0.15" endTrans="0 1.05655873 7.953" />                        
@@ -106,9 +104,8 @@
                     </sounds>                    
                 </mainPart> 
 
-                <stack forkNode="movingX"> 
+                <stack> 
                     <baleTrigger baletriggerNode="baleTrigger" />
-
 
                     <conveyor>
                         <shader node="conveyorBelt1" scrollLength="2.45" scrollSpeed="0.08" direction="Y" />
@@ -125,7 +122,6 @@
                     <baleTriggerMover baletriggerNode="baleTriggerMover" />       
                     <moveCollision node="moveCollision" />       
                     <moveCollisionAnimation node="moveCollisionAnimation" />       
-
                     
                     <conveyor>
                         <shader node="conveyorBelt2" scrollLength="7.83" scrollSpeed="0.08" direction="Y" />
