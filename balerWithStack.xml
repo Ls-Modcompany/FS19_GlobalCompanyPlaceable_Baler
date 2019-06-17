@@ -101,7 +101,17 @@
                         <sound delayedStart="false">
                             <sample linkNode="soundMain" template="BALE_WRAPPING_02"  />
                         </sound>
-                    </sounds>                    
+                    </sounds>   
+                        
+					<digitalDisplayLevel>
+						<display displayType="LEVEL" numbers="display1" emptyNumberColor="1 0 0 1" numberColor="1 1 0 1" fullNumberColor="0 1 0 1"/>
+					</digitalDisplayLevel>  
+					<digitalDisplayBunker>
+						<display displayType="LEVEL" numbers="display2" emptyNumberColor="1 0 0 1" numberColor="1 1 0 1" fullNumberColor="0 1 0 1"/>
+					</digitalDisplayBunker>      
+					<digitalDisplayNum>
+						<display displayType="LEVEL" numbers="display3" emptyNumberColor="1 0 0 1" numberColor="1 1 0 1" fullNumberColor="0 1 0 1"/>
+					</digitalDisplayNum>                   
                 </mainPart> 
 
                 <stack> 
@@ -161,6 +171,9 @@
                     <i3dMapping id="soundMover" node="2|6" />
                     <i3dMapping id="conveyorBelt1" node="1|1" />
                     <i3dMapping id="conveyorBelt2" node="2|0" />
+                    <i3dMapping id="display1" node="0|10|0" />
+                    <i3dMapping id="display2" node="0|10|1" />
+                    <i3dMapping id="display3" node="0|10|2" />
                 </i3dMappings>	
             </baler>
         </balers>		
