@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="42">
+<modDesc descVersion="44">
     <author>LsModcompany / kevink98</author>
     <version>1.0.0.0</version>
     <title>
-        <en><![CDATA[Stationary balers]]></en>
-        <de><![CDATA[Stationäre Ballenpressen]]></de>
+        <en><![CDATA[GlobalCompany - Stationary balers]]></en>
+        <de><![CDATA[GlobalCompany - Stationäre Ballenpressen]]></de>
     </title>
     
 	<description>
