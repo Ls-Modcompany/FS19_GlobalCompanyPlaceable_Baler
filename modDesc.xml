@@ -3,12 +3,13 @@
     <author>LsModcompany / kevink98</author>
     <version>1.0.0.0</version>
     <title>
-        <en><![CDATA[GlobalCompany - Stationary balers]]></en>
-        <de><![CDATA[GlobalCompany - Stationäre Ballenpressen]]></de>
+        <en>GlobalCompany - Stationary balers</en>
+        <de>GlobalCompany - Stationäre Ballenpressen</de>
     </title>
     
 	<description>
-        <en><![CDATA[Square bales can be pressed with this stationary baler.
+        <en>
+			<![CDATA[Square bales can be pressed with this stationary baler.
 
 Bale types: grass, hay, straw
 
@@ -16,8 +17,10 @@ Baling presses: Press with and without stacker.
 
 The stacker can stack up to four bales on top of each other.
 
-Information: Mod only playable in combination with GlobalCompany!]]></en>
-        <de><![CDATA[Mit dieser stationären Ballenpresse können Quadratballen gepresst werden.
+Information: Mod only playable in combination with GlobalCompany!]]>
+		</en>
+        <de>
+			<![CDATA[Mit dieser stationären Ballenpresse können Quadratballen gepresst werden.
 
 Ballenarten: Gras, Heu, Stroh
 
@@ -25,7 +28,8 @@ Ballenpressen: Presse mit und ohne Stapler.
 
 Der Stapler kann bis zu vier Ballen aufeinander stapeln.
 
-Information: Mod nur in Verbindung mit GlobalCompany spielbar!]]></de>
+Information: Mod nur in Verbindung mit GlobalCompany spielbar!]]>
+		</de>
     </description>
     
 	<iconFilename>icon_balers.dds</iconFilename>
