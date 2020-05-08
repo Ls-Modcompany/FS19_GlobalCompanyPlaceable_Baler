@@ -10,18 +10,13 @@
             <fillTypes>straw dryGrass_windrow grass_windrow</fillTypes>
         </specs>
         <image>store_balerWithStack.dds</image>
-        <price>110000</price>
+        <price>55000</price>
         <lifetime>1000</lifetime>
         <dailyUpkeep>45</dailyUpkeep>
         <rotation>0</rotation>
         <brand>GCPLACEABLE</brand>
         <species>placeable</species>
         <category>globalCompanyPlaceable</category>
-        <vertexBufferMemoryUsage>180404</vertexBufferMemoryUsage>
-        <indexBufferMemoryUsage>32964</indexBufferMemoryUsage>
-        <textureMemoryUsage>5680200</textureMemoryUsage>
-        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
-        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
     </storeData>
 
     <placeableType>GC_BalerPlaceable</placeableType>
@@ -42,7 +37,7 @@
         <balers>
             <baler indexName="BALERWITHSTACK" title="GC_baler_title_witStack" autoOn="true" >      
                 <registerAnimations>                    
-                    <animation name="baleAnimation">
+                    <animation name="baleAnimation" looping="true" stopAfterLoop="true">
                         <part node="baleAnimation" startTime="0" endTime="6" startTrans="0 1.05655873 0.15" endTrans="0 1.05655873 7.953" />                        
                     </animation>
                     <animation name="stackAnimation">
@@ -86,7 +81,7 @@
                         </effect>
                     </conveyor>
 
-                    <baleAnimation>
+                    <baleAnimation spawn="spawnPos">
                         <objects node="baleAnimation">
                             <object node="baleStraw240_vis" fillTypeName="straw" />
                             <object node="baleGrass240_vis" fillTypeName="grass_windrow" />
@@ -160,6 +155,7 @@
                     <i3dMapping id="baleStraw240_vis" node="0|8|1|0" />
                     <i3dMapping id="baleGrass240_vis" node="0|8|1|1" />
                     <i3dMapping id="baleHay240_vis" node="0|8|1|2" />
+                    <i3dMapping id="spawnPos" node="0|8|2"/>
                     <i3dMapping id="movingY" node="1|0" />
                     <i3dMapping id="movingX" node="1|0|0" />
                     <i3dMapping id="baleTrigger" node="1|2" />

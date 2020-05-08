@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="44">
+<modDesc descVersion="47">
     <author>LsModcompany / kevink98</author>
     <version>1.0.0.0</version>
     <title>
-        <en>GlobalCompany - Stationary balers</en>
+        <en>GlobalCompany - Stationary Balers</en>
         <de>GlobalCompany - Stationäre Ballenpressen</de>
     </title>
     
@@ -15,7 +15,19 @@ Bale types: grass, hay, straw
 
 Baling presses: Press with and without stacker.
 
-The stacker can stack up to four bales on top of each other.
+Press without stacker:
+Costs: 35.000 €
+Maintenance costs: 45 €/ day
+Bunker capacity: 20,000 litres
+
+Press with stacker:
+Costs: 55.000 €
+Maintenance costs: 45 €/ day
+Bunker capacity: 20,000 litres
+
+The desired bale type must be adjusted on the display.
+
+The stacker can stack up to four bales. The bales must not be loaded with autoload. The bales on the stacker must not be removed. Wait here until the bales have been pushed back.
 
 Information: Mod only playable in combination with GlobalCompany!]]>
 		</en>
@@ -26,7 +38,19 @@ Ballenarten: Gras, Heu, Stroh
 
 Ballenpressen: Presse mit und ohne Stapler.
 
-Der Stapler kann bis zu vier Ballen aufeinander stapeln.
+Presse ohne Stapler:
+Kosten: 35.000 €
+Unterhaltskosten: 45 €/ Tag
+Kapazität Bunker: 20.000 Liter
+
+Presse mit Stapler:
+Kosten: 55.000 €
+Unterhaltskosten: 45 €/ Tag
+Kapazität Bunker: 20.000 Liter
+
+Am Display muss die gewünschte Ballenart angepasst werden.
+
+Der Stapler kann bis zu vier Ballen aufeinander stapeln. Die Ballen dürfen nicht mit Autoload geladen werden. Die Ballen beim Stapler dürfen nicht weggenommen werden. Hier warten, bis die Ballen nach hinten geschoben wurden.
 
 Information: Mod nur in Verbindung mit GlobalCompany spielbar!]]>
 		</de>
@@ -48,5 +72,5 @@ Information: Mod nur in Verbindung mit GlobalCompany spielbar!]]>
 		<sourceFile filename="scripts/GC_Checker.lua" />
     </extraSourceFiles>
 	
-	<globalCompany minimumVersion="1.0.0.0" />
+	<globalCompany minimumVersion="1.5.0.0" />
 </modDesc>
